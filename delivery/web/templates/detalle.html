@@ -1,0 +1,30 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+    <!-- shop-details Area Start-->
+    <div class="shop-details-area pd-top-100">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-6">
+                    <div class="sticy-product">
+                        <div class="product-thumbnail-wrapper">
+                            <img src="{{product.imagen.url}}" alt="img {{product.nombre}}">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="shop-item-details">                    
+                        <h2 class="entry-title">{{product.nombre}}</h2>
+                        <div class="row">
+                            <div class="col-lg-6 align-self-center">
+                                <h4 class="price">S/{{product.precio}}</h4>
+                            </div>                            
+                        </div>   
+                        <p class="mt-4">{{product.descripcion}}</p>    
+                        <a href="{% url 'web:agregarCarrito' product.id %}" class="btn btn-secondary">AGREGAR AL CARRITO</a>
+                </div>
+            </div>
+        </div>
+    </div>
+{%endblock%}
